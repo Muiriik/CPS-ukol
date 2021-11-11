@@ -14,19 +14,19 @@ help:
 	@echo "  tests          Run tests"
 	@echo ""
 
-venv: venv/bin/python
-venv/bin/python:
+venv:
 	${PYTHON} -m venv ${VENV}
 
 install: venv
 	${VENV}/bin/pip install -r requirements.txt
 
-run: venv
+run:
 	FLASK_APP=./app.py \
 	FLASK_ENV=development \
 	flask run --port=8080
 
 test:
+	${VENV}/bin/pip install -e .
 	${VENV}/bin/pytest
 
 
