@@ -22,7 +22,7 @@ install: venv
 	${VENV}/bin/pip install -r requirements.txt
 
 run: venv
-	FLASK_APP=./src \
+	FLASK_APP=./app.py \
 	FLASK_ENV=development \
 	flask run --port=8080
 

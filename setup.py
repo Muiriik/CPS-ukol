@@ -3,7 +3,7 @@
 from setuptools import find_packages, setup
 
 setup(
-  name='CPS xml converter',
+  name='CPS xml to json',
   version='1.0',
   description='Convert xml feed to json',
   author='Jan Kurs',

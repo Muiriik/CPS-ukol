@@ -7,6 +7,7 @@ def create_app(test_config=None):
   app.config.from_mapping(
     # a default secret that should be overridden by instance config
     SECRET_KEY="dev",
+    JSON_SORT_KEYS=False,
   )
 
   if test_config is None:
@@ -17,7 +18,7 @@ def create_app(test_config=None):
     app.config.update(test_config)
 
 
-  from src.main import convert_blueprint
+  from CPS_xml_to_json.main import convert_blueprint
   app.register_blueprint(convert_blueprint)
 
   return app
